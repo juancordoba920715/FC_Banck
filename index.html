@@ -1,25 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <title>FC banck</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <title>Document</title>
 </head>
+
 <body>
 
-    <form action="">
-        <input type="text">
-        <input type="text">
-        <input type="text">
-        <input class="boton" type="button" value="">
-        <input class="boton" type="button" value="">
-        <input class="boton" type="button" value="">
-        <input class="boton" type="button" value="">
+  <header id="vista1">
+    <a href="#" class="LOGOl">
+      <h1 class="nombre del banco"> F.C.P BANK </h1>
+    </a>
+    <nav>
+      <a href="" class="nav link">Registrarse</a>
+    </nav>
 
+    <div id="formulario" class="login-box">
+      <img class="Avatar" src="/assets/img/logo.jpeg" alt="Logo de fazt">
+      <h1>Login here</h1>
+      <form>
+        <label for="Username">Username</label>
+        <input type="text" placeholder="Enter Username">
+        <label for="Password">Password</label>
+        <input type="password" placeholder="Enter Password">
+        <input onclick="login_in()" type="button" value="Login In">
+        <a href="">lost your Password?</a><br>
+      </form>
+    </div>
+  </header>
+
+
+  <section class="menu_transaccion" id="menu_transaccion" style="display: none;">
+    <section id="ladoA" class="ladoA">
+      <input onclick="Consultar_saldo()" type="button" value="Consultar saldo">
+      <input onclick="Retirar_dinero()" type="button" value="Retirar dinero">
+      <input onclick="Transferir()" type="button" value="Transferir">
+    </section>
+    <section id="ladoB" class="ladoB">
+      <input onclick="Consignar_a_cuenta()" type="button" value="Consignar a tu cuenta">
+      <input onclick="Cierre_sesion()" type="button" value="Cierre sesion">
+    </section>
+  </section>
+
+  <div class="formulario_consulta" id="consulta_saldo" style="display: none;" >
+    <form id="saldoUsuario" action="">
+      <input type="text" placeholder="Nombre Usuario">
+      <input type="text" placeholder="Cedula Usuario">
+      <input type="text" placeholder="Monto actual">            
     </form>
+  </div>
 
-    
-    <script src="assets/js/script.js"></script>
+  <script src="assets/js/script.js"></script>
 </body>
+
 </html>
