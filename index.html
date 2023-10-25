@@ -2,58 +2,129 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="assets/css/style.css">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>F.C.P BANK</title>
 </head>
 
 <body>
+    <header>
+        <section class="logo">
+            <img src="assets/img/logoBanco.jpeg" alt="">
+        </section>
+        <div class="mensajeInicial" id="mensajeInicial" style="display: block">
+            <p class="titulo">F C P BANK</p>
+        </div>
+        <div class="bienvenida" id="mensajeBienvenida" style="display: none">
+            <p class="titulo">Bienvenido a F C P BANK</p>
+        </div>
+        <section>
+            <button class="crear_cuenta" id="mostrarFormulario">Crear cuenta</button>
+            <button class="crear_cuenta" id="volver" style="display: none;" onclick="Volver()">Regresar</button>
+        </section>
+    </header>
+    <main>
+        <div class="formularioCuenta" id="formularioContainer" style="display: none;">
+            <form id="miFormulario">
+                <label for="nombre">.</label>
+                <input type="text" placeholder="Nombre:" id="nombre" name="nombre" required><br>
 
-  <header id="vista1">
-    <a href="#" class="LOGOl">
-      <h1 class="nombre del banco"> F.C.P BANK </h1>
-    </a>
-    <nav>
-      <a href="" class="nav link">Registrarse</a>
-    </nav>
+                <label for="cc">.</label>
+                <input type="text" placeholder="CC" id="cc" name="cc" required><br>
 
-    <div id="formulario" class="login-box">
-      <img class="Avatar" src="/assets/img/logo.jpeg" alt="Logo de fazt">
-      <h1>Login here</h1>
-      <form>
-        <label for="Username">Username</label>
-        <input type="text" placeholder="Enter Username">
-        <label for="Password">Password</label>
-        <input type="password" placeholder="Enter Password">
-        <input onclick="login_in()" type="button" value="Login In">
-        <a href="">lost your Password?</a><br>
-      </form>
-    </div>
-  </header>
+                <label for="monto">.</label>
+                <input type="text" placeholder="Monto:" id="monto" name="monto" required><br>
+
+                <label for="contrasena">.</label>
+                <input type="password" placeholder="Contraseña:" id="contrasena" name="contrasena" required><br>
+
+                <input type="submit" value="Enviar">
+            </form>
+        </div>
+
+        <!-- *********login********** -->
+        <div class="login" id="busquedaContainer" style="display:block">
+            <form id="buscarUsuarioForm">
+                <section>
+                    <label for="buscarCc">.</label>
+                    <input type="text" placeholder="Numero CC:" id="buscarCc" name="buscarCc" required>
+                </section>
+                <section>
+                    <label for="buscarContrasena">.</label>
+                    <input type="password" placeholder="Contraseña:" id="buscarContrasena" name="buscarContrasena" required>
+                </section>
+                <section>
+                    <input type="submit" value="Ingresar">
+                </section>
+
+            </form>
+        </div>
 
 
-  <section class="menu_transaccion" id="menu_transaccion" style="display: none;">
-    <section id="ladoA" class="ladoA">
-      <input onclick="Consultar_saldo()" type="button" value="Consultar saldo">
-      <input onclick="Retirar_dinero()" type="button" value="Retirar dinero">
-      <input onclick="Transferir()" type="button" value="Transferir">
-    </section>
-    <section id="ladoB" class="ladoB">
-      <input onclick="Consignar_a_cuenta()" type="button" value="Consignar a tu cuenta">
-      <input onclick="Cierre_sesion()" type="button" value="Cierre sesion">
-    </section>
-  </section>
 
-  <div class="formulario_consulta" id="consulta_saldo" style="display: none;" >
-    <form id="saldoUsuario" action="">
-      <input type="text" placeholder="Nombre Usuario">
-      <input type="text" placeholder="Cedula Usuario">
-      <input type="text" placeholder="Monto actual">            
-    </form>
-  </div>
 
-  <script src="assets/js/script.js"></script>
+        <!-- ********************** -->
+        <aside class="botones" id="botones" style="display: none">
+            <button id="botonOpcion1" disabled>Consignar</button>
+            <button id="botonOpcion2" disabled>Transferir</button>
+            <button id="botonOpcion3" disabled>Retirar</button>
+            <button id="botonOpcion4" disabled>Consultar saldo</button>
+            <button id="cerrarSesion">Cerrar Sesión</button>
+        </aside>
+
+
+
+        <!-- ********************* -->
+
+        <div class="general" id="formularioOpcion1" style="display: none;">
+
+            <form id="consignacion">
+                <label for="cuentaConsignacion">.</label>
+                <input class="inputGeneral" type="text" placeholder="numero cuenta a consignar:" id="cuentaConsignacion" name="cuentaConsignacion" required><br>
+
+                <label for="valorConsinado">.</label>
+                <input class="inputGeneral" type="text" placeholder="valor a consignar:" id="valorConsinado" name="valorConsinado" required><br>
+
+                <input class="boton" type="submit" value="Consignar">
+            </form>
+
+        </div>
+
+        <div class="general" id="formularioOpcion2" style="display: none;">
+            <form id="transferenciaForm">
+                <label for="cuentaATransferir">.</label>
+                <input class="inputGeneral" type="text" placeholder="numero de cuenta a transferir:" id="cuentaATransferir" name="cuentaATransferir" required><br>
+
+                <label for="valorATransferir">.</label>
+                <input class="inputGeneral" type="text" placeholder="valor a consignar:" id="valorATransferir" name="valorATransferir" required><br>
+
+
+                <input class="boton" type="submit" value="Transferir">
+            </form>
+        </div>
+        <div class="resultado" id="resultado">
+
+        </div>
+        <div class="general" id="formularioOpcion3" style="display: none;">
+            <form id="Retirar">
+                <label for="cuentaRetiro">.</label>
+                <input class="inputGeneral" type="text" placeholder="Valor a retirar:" id="cuentaRetiro" name="cuentaRetiro" required><br>
+
+                <input class="boton" id="retirarOcultar" type="submit" value="Retirar">
+            </form>
+        </div>
+
+        <div id="formularioOpcion4" style="display: none;">
+            <form>
+                <p id="saldoCuenta"></p>
+            </form>
+        </div>
+
+
+        
+
+        <script src="./assets/js/script.js"></script>
 </body>
 
 </html>
